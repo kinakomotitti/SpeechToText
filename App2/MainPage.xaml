@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="1117,202,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="106,192,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock Name="test" HorizontalAlignment="Left" Margin="75,268,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="545" Height="658" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <TextBlock Name="test2" HorizontalAlignment="Left" Margin="879,272,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="545" Height="658" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+
+    </Grid>
+</Page>

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Windows.Media.SpeechRecognition;
 
 // This example code shows how you could implement the required main function for a 
 // Console UWP Application. You can replace all the code inside Main with your own custom code.
@@ -13,19 +16,26 @@ namespace SpeechToText
     {
         static void Main(string[] args)
         {
-            if (args.Length == 0)
+            Program profram = new Program();
+            Task.Run(async () =>
             {
-                Console.WriteLine("Hello - no args");
-            }
-            else
-            {
-                for (int i = 0; i < args.Length; i++)
-                {
-                    Console.WriteLine($"arg[{i}] = {args[i]}");
-                }
-            }
-            Console.WriteLine("Press a key to continue: ");
+                await profram.Recognition();
+            });
+            
             Console.ReadLine();
         }
+
+
+        private SpeechRecognizer Recognizer { get; set; }
+
+        private async Task Recognition()
+        {
+            this.Recognizer = new SpeechRecognizer();
+            await this.Recognizer.CompileConstraintsAsync();
+            var result = await this.Recognizer.RecognizeAsync();
+
+            Console.WriteLine(result.Text);
+        }
+
     }
 }
